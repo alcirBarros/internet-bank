@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BankService } from '../service';
 
 @Component({
   selector: 'app-bank-listagem',
@@ -12,9 +13,15 @@ export class ListagemComponent implements OnInit {
     {id: 2, nome: 'Bradesco'}
   ];
 
-  constructor() { }
+  // bankList: Array<any>;
+
+  constructor(private contatoService: BankService) { }
 
   ngOnInit() {
+    // this.listar();
   }
 
+  // listar(){
+  //   this.contatoService.listar().subscribe(dado => this.bankList= dado);
+  // }
 }

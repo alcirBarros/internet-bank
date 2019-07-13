@@ -5,7 +5,8 @@ import { Bank } from '../bank';
 @Component({
   selector: 'app-bank-listagem',
   templateUrl: './listagem.component.html',
-  styleUrls: ['./listagem.component.css']
+  styleUrls: ['./listagem.component.css'],
+  preserveWhitespaces: true
 })
 export class ListagemComponent implements OnInit {
 

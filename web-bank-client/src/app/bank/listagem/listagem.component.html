@@ -1,7 +1,72 @@
-<p>Listagem</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Internet Bank</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link">
+              <span>Bank</span>
+              <span class="sr-only">(current)</span>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cashier</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="card mt-3">
+    <div class="card-header">
+        <div class="float-left">
+            <h4>Bank</h4>
+        </div>
+        <div class="float-right">
+            <button type="button" class="btn btn-primary" >new Bank</button>
+            <button type="button" class="btn btn-secondary">Update</button>
+        </div>
+    </div>
+  </div>
 
-<ul>
-    <li *ngFor="let bank of bankList">
-        {{bank.id}} - {{bank.nome}}
-    </li>
-</ul>
+  <div class="card-body">
+        <table class="table table-hover">
+    <thead>
+        <tr>
+        <th>#</th>
+        <th>Bank</th>
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bank of bankList">
+        <td>{{ bank.id }}</td>
+        <td>{{ bank.nome }}</td>
+        <td>
+            <span class="float-right">
+            <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(curso.id)">
+                Update
+            </button>
+
+            <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(curso)">
+                Remove
+            </button>
+            </span>
+        </td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+
+
+
+
+
+

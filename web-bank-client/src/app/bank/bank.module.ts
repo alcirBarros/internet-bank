@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListagemComponent } from './listagem/listagem.component';
-
+import { ListagemComponent } from './listagem';
 
 
 @NgModule({
-  declarations: [ListagemComponent],
   imports: [
     CommonModule
+  ],
+  declarations: [
+    ListagemComponent
+  ],
+  exports:[
+    ListagemComponent
   ]
 })
 export class BankModule { }

@@ -4,14 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 
+import { BankModule } from './bank';
+
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BankModule
   ],
   providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,7 @@
-<p>listagem works!!!!!!!!!!</p>
+<p>Listagem</p>
+
+<ul>
+    <li *ngFor="let bank of bankList">
+        {{bank.id}} - {{bank.nome}}
+    </li>
+</ul>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BankService } from '../service';
+import { Bank } from '../bank';
 
 @Component({
   selector: 'app-bank-listagem',
@@ -8,20 +9,11 @@ import { BankService } from '../service';
 })
 export class ListagemComponent implements OnInit {
 
-  bankList = [
-    {id: 1, nome: 'Satander'},
-    {id: 2, nome: 'Bradesco'}
-  ];
+  bankList: Bank[];
 
-  // bankList: Array<any>;
-
-  constructor(private contatoService: BankService) { }
+  constructor(private bankService: BankService) { }
 
   ngOnInit() {
-    // this.listar();
+    this.bankService.listar().subscribe(dados => this.bankList = dados);
   }
-
-  // listar(){
-  //   this.contatoService.listar().subscribe(dado => this.bankList= dado);
-  // }
 }

@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.web.bank.service.IBankService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
+@CrossOrigin(maxAge = 3600)
 @RequestMapping("/v1/bank")
 public class BankController implements IBankController {
 
@@ -18,6 +20,7 @@ public class BankController implements IBankController {
     private IBankService iBankService;
 
     @Override
+    @CrossOrigin
     @RequestMapping(value = "/list", method = RequestMethod.GET, produces = "application/json")
     public Iterable<Bank> list() {
         Iterable<Bank> bankList = iBankService.listAllBank();

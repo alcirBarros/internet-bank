@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 
 import { BankModule, ListagemComponent } from './bank';
 import { BankService } from './bank/service';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListagemComponent
+    ListagemComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

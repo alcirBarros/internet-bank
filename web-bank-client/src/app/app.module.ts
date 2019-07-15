@@ -6,20 +6,36 @@ import { AppComponent } from './app.component';
 
 import { BankModule, ListagemComponent } from './bank';
 import { BankService } from './bank/service';
-import { HeaderComponent } from './header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
+import { routing } from './app.routing';
+import { SigninComponent } from './signin/signin.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth.guard';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    SigninComponent,
     ListagemComponent,
-    HeaderComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    SharedModule,
+    routing
   ],
-  providers: [BankService],
+  providers: [
+    BankService,
+    AuthGuard,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

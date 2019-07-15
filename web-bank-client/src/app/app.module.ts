@@ -12,16 +12,15 @@ import { routing } from './app.routing';
 import { SigninComponent } from './signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './shared/home/home.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
     SigninComponent,
-    ListagemComponent,
-    HomeComponent
+    ListagemComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +31,9 @@ import { HomeComponent } from './home/home.component';
     routing
   ],
   providers: [
-    BankService,
     AuthGuard,
-    AuthService
+    AuthService,
+    BankService
   ],
   bootstrap: [AppComponent]
 })
